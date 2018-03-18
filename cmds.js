@@ -219,7 +219,7 @@ exports.playCmd = rl => {
 
                     log('Has terminado!', 'grey');
                     log( `Has conseguido: ${colorize(score,'blue')} puntOTs`); 
-                    log(FIN,'magenta');
+                    log("FIN",'magenta');
                     resolve();
                 }
                 //return;
@@ -241,7 +241,7 @@ exports.playCmd = rl => {
                             } else {
                                 log('Respuesta incorrecta', 'red');
                                 log(score,'red');
-                                log(FIN,'magenta');
+                                log("FIN",'magenta');
                                 resolve();
                             }
                    
