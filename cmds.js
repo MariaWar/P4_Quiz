@@ -219,10 +219,11 @@ exports.playCmd = rl => {
 
                     log('Has terminado!', 'grey');
                     log( `Has conseguido: ${colorize(score,'blue')} puntOTs`); 
+                    log(FIN,'magenta');
                     resolve();
                 }
                 //return;
-                 else {
+                else {
                 //cogemos pregunta al azar
                     let id = Math.floor(random(0, toBeResolved.length));
                     let quiz = toBeResolved[id];
@@ -240,10 +241,11 @@ exports.playCmd = rl => {
                             } else {
                                 log('Respuesta incorrecta', 'red');
                                 log(score,'red');
+                                log(FIN,'magenta');
                                 resolve();
                             }
                    
-                        });
+                         });
                 }
         });
     };
