@@ -170,7 +170,7 @@ exports.testCmd = (socket, rl, id) => {
         if (!quiz) {
             throw new Error(`No existe un quiz asociado al id=${id}.`);
         }
-        log(`[${colorize(quiz.id, 'magenta')}]: ${quiz.question}`)
+        log(socket,`[${colorize(quiz.id, 'magenta')}]: ${quiz.question}`)
         return makeQuestion(socket, rl, 'Introduzca la respuesta ')
         .then(a =>{
              if (a.trim().toLowerCase() === quiz.answer.trim().toLowerCase()){
@@ -308,5 +308,6 @@ exports.creditsCmd = (socket, rl) => {
 exports.quitCmd= (socket, rl) => {
     
     rl.close();
-    rl.prompt();
+    socket.end();
+    
 };
